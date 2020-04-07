@@ -8,7 +8,6 @@ const app = new App({
   signingSecret: process.env.SLACK_SIGNING_SECRET
 });
 
-
 // Fetch users using the users.list method
 async function fetchUsers() {
     try {
@@ -18,7 +17,9 @@ async function fetchUsers() {
         token: process.env.SLACK_BOT_TOKEN
       });
 
-      return result.members;
+      return new Promise(function(resolve, reject) {
+        resolve(result.members);
+      });
     }
     catch (error) {
       console.error(error);
@@ -73,11 +74,9 @@ async function sendMessage(twoUsers) {
 (async () => {
   // Start your app
 
-    var fullList = fetchUsers();
-    fullList.then(async function(result) {
-      var users = await getValidUsers(result);
-      var twoUsers = await getRandomUsers(users, 2);
-      sendMessage(twoUsers);
-    })
+    var fullList = await fetchUsers();
+    var users = await getValidUsers(fullList);
+    var twoUsers = await getRandomUsers(users, 2);
+    sendMessage(twoUsers);
 
 })();
