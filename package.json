@@ -1,0 +1,23 @@
+{
+  "name": "slack-coffee",
+  "version": "1.0.0",
+  "description": "Automatically matches 2 members of the Slack Organization for a cup of coffee!",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rishabhlakhotia/slack-coffee.git"
+  },
+  "author": "Rishabh Lakhotia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rishabhlakhotia/slack-coffee/issues"
+  },
+  "homepage": "https://github.com/rishabhlakhotia/slack-coffee#readme",
+  "dependencies": {
+    "@slack/bolt": "^2.0.0",
+    "dotenv": "^8.2.0"
+  }
+}
