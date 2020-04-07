@@ -1,4 +1,4 @@
-# slack-coffee
+# slack-coffee ![license-mit](https://img.shields.io/github/license/rishabhlakhotia/slack-coffee)
 Matches 2 members of the Slack Organization for a cup of coffee!
 
 ## Usage
