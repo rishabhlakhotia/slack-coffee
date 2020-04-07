@@ -65,7 +65,11 @@ async function sendMessage(twoUsers) {
         channel: process.env.CHANNEL,
         text: "Today's coffee is for " + twoUsers[0] + " and " + twoUsers[1] + "."
       });
-    }
+
+    return new Promise(function(resolve, reject) {
+      resolve(result);
+    });
+  }
     catch (error) {
       console.error(error);
     }
@@ -77,6 +81,7 @@ async function sendMessage(twoUsers) {
     var fullList = await fetchUsers();
     var users = await getValidUsers(fullList);
     var twoUsers = await getRandomUsers(users, 2);
-    sendMessage(twoUsers);
+    var result = await sendMessage(twoUsers);
+    console.log(result.message.text);
 
 })();
