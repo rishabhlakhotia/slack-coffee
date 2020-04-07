@@ -8,8 +8,6 @@ const app = new App({
   signingSecret: process.env.SLACK_SIGNING_SECRET
 });
 
-// You probably want to use a database to store any user information ;)
-let usersStore = {};
 
 // Fetch users using the users.list method
 async function fetchUsers() {
